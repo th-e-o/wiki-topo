@@ -1,0 +1,55 @@
+<title>Wiki Topologie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/*STYLE*/
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#accueil">
+      <svg class="brand-mark" viewBox="0 0 40 24" aria-hidden="true">
+        <path d="M4 12c0-5 4-8 8-8 7 0 9 16 16 16 4 0 8-3 8-8s-4-8-8-8c-7 0-9 16-16 16-4 0-8-3-8-8z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      </svg>
+      <span>Wiki Topologie</span>
+    </a>
+    <label class="search" for="q">
+      <span class="sr-only">Rechercher</span>
+      <input id="q" type="search" placeholder="Rechercher un concept, un article, un auteur…" autocomplete="off">
+    </label>
+    <nav class="nav" aria-label="Sections">
+      <a href="#accueil">Concepts</a>
+      <a href="#articles">Articles</a>
+      <a href="#methode">Méthode</a>
+    </nav>
+  </div>
+</header>
+
+<main id="view" class="view" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="foot-inner" id="foot"></div>
+</footer>
+
+<script>
+/*DATA*/
+</script>
+<!--CHUNKS-->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], processEscapes: false,
+    macros: { normalfont: "", upshape: "", itshape: "", textup: ["\\text{#1}", 1], textnormal: ["\\text{#1}", 1] },
+    noundefined: { color: "#7d8794" }  /* macro d'auteur non résolue : affichée en gris */
+  },
+  svg: { fontCache: "global" },
+  options: { enableMenu: false },
+  startup: { typeset: false }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"></script>
+<script>
+/*APP*/
+</script>

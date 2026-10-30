@@ -1,0 +1,18 @@
+\documentclass{amsart}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defi}[thm]{Definition}
+\newtheorem*{conj*}{Conjecture}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\DeclareMathOperator{\Homeo}{Homeo}
+\begin{document}
+\input{sections/defs}
+\begin{thm}[Main]\label{t:main}
+Let $K$ be a \emph{slice knot}. Then $\abs{\sigma(K)} = 0$ in $\Z$ % comment
+and \[ \Homeo(S^3) \simeq O(4). \] See~\cite[Thm.~2]{Fr82} and Lemma~\ref{l:x}.
+\end{thm}
+\begin{conj*}
+Every \textbf{fibered knot} is ``nice''---compare \cite{G}:
+\begin{itemize}\item first $a$; \item second.\end{itemize}
+\end{conj*}
+\end{document}
