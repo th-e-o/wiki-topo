@@ -22,7 +22,8 @@ STOP = {"map", "set", "function", "space", "group", "graph", "point", "element",
 
 VERBISH = {"to", "is", "are", "be", "if", "we", "it", "of", "on", "in", "by", "for", "with",
            "and", "or", "that", "which", "belongs", "said", "called", "has", "have",
-           "not", "necessarily", "almost", "surely", "one", "i", "ii", "iii", "such", "any"}
+           "not", "necessarily", "almost", "surely", "one", "i", "ii", "iii", "such", "any",
+           "at", "over", "under", "from", "into", "onto", "non", "pairwise", "very", "more", "less"}
 ADJ_PREFIXES = ("non-", "finite-", "well-", "strict-", "infinite-", "locally-", "weakly-")
 
 
@@ -73,9 +74,15 @@ def main():
     for i, s in enumerate(statements):
         for t in s["terms"]:
             defined[alias_of.get(t, t)].add(i)
-    for t, idx in defined.items():
+    seen = {k.replace("-", " ") for k in cands}
+    for t, idx in sorted(defined.items(), key=lambda kv: -len(kv[1])):
         if t in cands or not is_noun_phrase(t):
             continue
+        if t.replace("-", " ") in seen:  # « weak-equivalence » = « weak equivalence »
+            canon = next(k for k in cands if k.replace("-", " ") == t.replace("-", " "))
+            defined[canon] |= idx
+            continue
+        seen.add(t.replace("-", " "))
         cands[t] = {"key": t, "fr": None, "branch": None, "forms": [t], "source": "extrait"}
 
     word_index = defaultdict(set)
